@@ -3,13 +3,13 @@ main :-
     findall(X, child(X, john), Children),
     write('Children of John: '), write(Children), nl,
 
-    findall(X, sibling(paul, X), Siblings),
-    write('Siblings of Paul: '), write(Siblings), nl,
+    findall(X, sibling(ian, X), Siblings),
+    write('Siblings of ian: '), write(Siblings), nl,
 
-    (cousin(david, tom) -> 
-        write('David is a cousin of Tom.'), nl 
+    (cousin(dave, tom) -> 
+        write('dave is a cousin of Tom.'), nl 
     ; 
-        write('David is not a cousin of Tom.'), nl
+        write('dave is not a cousin of Tom.'), nl
     ),
 
     findall(X, descendant(X, john), Descendants),
@@ -19,30 +19,30 @@ main :-
 
 % Basic Facts
 male(john).
-female(mary).
-male(paul).
+female(jane).
+male(ian).
 female(susan).
-male(david).
+male(dave).
 female(lisa).
 male(tom).
 female(emily).
-female(sophia).
-male(james).
+female(sammy).
+male(jammie).
 
-parent(john, paul).
-parent(mary, paul).
+parent(john, ian).
+parent(jane, ian).
 parent(john, susan).
-parent(mary, susan).
+parent(jane, susan).
 
-parent(paul, david).
-parent(lisa, david).
-parent(paul, emily).
+parent(ian, dave).
+parent(lisa, dave).
+parent(ian, emily).
 parent(lisa, emily).
 
 parent(susan, tom).
-parent(susan, sophia).
-parent(james, tom).
-parent(james, sophia).
+parent(susan, sammy).
+parent(jammie, tom).
+parent(jammie, sammy).
 
 % Derived Relationships
 
